@@ -18,41 +18,42 @@
     <a class="navbar-brand" href="#">
     <%= image_tag("logo-full.png", size: "200x62" ,:alt => "petbnb logo") %></a>
 
-      <!-- Left links -->
-      <form class="d-flex align-items-center w-30 form-search">
-        <div class="input-group">
-          <input type="search" class="form-control" placeholder="Type your destination" aria-label="Search" />
-        </div>
-        <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
-      </form>
-      <form class="d-flex align-items-center w-30 form-search">
-        <div class="input-group">
-          <input type="search" class="form-control" placeholder="When ?" aria-label="Search" />
-        </div>
-        <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
-      </form>
-      <form class="d-flex align-items-center w-30 form-search">
-        <div class="input-group">
-          <input type="search" class="form-control" placeholder="How many of us ?" aria-label="Search" />
-        </div>
-        <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
-      </form>
+      <!-- Search Bar -->
+      <div>
+        <form class="d-flex align-items-center w-30 form-search">
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Anywhere" aria-label="Search" />
+          </div>
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Any week" aria-label="Search" />
+          </div>
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Add guests" aria-label="Search" />
+          </div>
+          <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
+        </form>
+      </div>
 
-      <ul class="navbar-nav ms-3">
-        <button type="button" class="btn btn-dark btn-rounded">Sign in</button>
-      </ul>
-      <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <!-- DropDown Menu -->
+        <div class="d-flex align-items-center drop-down-box">
+          <%= image_tag "menu-icon.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <li class="nav-item dropdown">
+            <%= image_tag "account-circle.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Sign up", "#", class: "dropdown-item" %>
+              <%= link_to "Log in", "#", class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Host your home", "#", class: "dropdown-item" %>
+              <%= link_to "Rate an experience", "#", class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Messages", "#", class: "dropdown-item" %>
+              <%= link_to "Notifications", "#", class: "dropdown-item" %>
               <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
+        </div>
     </div>
-    <!-- Collapsible wrapper -->
   </div>
-  <!-- Container wrapper -->
 </nav>
 
 <!--Main Navigation-->
