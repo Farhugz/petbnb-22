@@ -2,8 +2,8 @@
   border-radius: 25px;
   width: 100px;
   height: 45px;
-  background: #e0e0e0;
-  box-shadow:  10px 10px 20px #0000004e, -5px -5px 10px #ffffff4a;
+  background: #ffffffa1;
+  box-shadow:  10px 10px 20px #0000003a, -5px -5px 10px #ffffff2a;
 }
 
 .layout-drop {
@@ -13,4 +13,24 @@
 
 .margin-top {
   margin-top: 0.1em;
+}
+
+.search-box {
+  border-radius: 25px;
+  background: #e0e0e0;
+  box-shadow:  10px 10px 20px #0000004e, -5px -5px 10px #ffffff4a;
+}
+
+.form-control {
+  border-radius: 50px;
+}
+
+.fit-content {
+  width: fit-content;
+  height: fit-content;
+  background: #e0e0e0;
+}
+
+.navbar {
+  background: #e0e0e000;
 }
