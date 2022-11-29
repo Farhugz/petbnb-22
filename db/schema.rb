@@ -10,8 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_151808) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pet_homes", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "location"
+    t.string "pet_type"
+    t.text "responsibilities"
+    t.integer "capacity"
+    t.string "name"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.text "emergency_info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
