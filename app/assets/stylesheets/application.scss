@@ -10,3 +10,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.search-bar {
+  border-radius: 20px;
+}
