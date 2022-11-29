@@ -1,7 +1,16 @@
 .drop-down-box {
-  background-color: white;
   border-radius: 25px;
-  width: 120px;
+  width: 100px;
   height: 45px;
-  box-shadow: 9px 13px 15px -6px rgba(0,0,0,0.3);
+  background: #e0e0e0;
+  box-shadow:  10px 10px 20px #0000004e, -5px -5px 10px #ffffff4a;
+}
+
+.layout-drop {
+  margin-left: 1.25em;
+  margin-right: 0.85em;
+}
+
+.margin-top {
+  margin-top: 0.1em;
 }
