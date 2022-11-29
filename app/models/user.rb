@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :pet_homes
-  has_many :reviews, through: :bookings
+  # has_many :reviews, through: :bookings
 end
