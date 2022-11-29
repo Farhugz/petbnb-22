@@ -1,0 +1,13 @@
+.homegrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  width: 100%;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  img {
+    height: 50px;
+    margin: 10px;
+  }
+}
