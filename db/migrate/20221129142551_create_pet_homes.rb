@@ -3,7 +3,7 @@ class CreatePetHomes < ActiveRecord::Migration[7.0]
     create_table :pet_homes do |t|
       t.string :location
       t.string :pet_type
-      t.text :responsibilies
+      t.text :responsibilities
       t.integer :capacity
       t.string :name
       t.text :description
