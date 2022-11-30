@@ -1,1 +1,31 @@
-<p>this is a navbar</p>
+<nav class="navbar navbar-expand-lg" style="background-color: rgba(255, 255, 255, 0.3);">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">
+      <%= image_tag("logo-full.png", size: "200x62" ,:alt => "petbnb logo") %></a>
+
+      <!-- Search Bar -->
+      <!-- Search Bar -->
+
+      <!-- DropDown Menu -->
+        <div class="d-inline-flex align-items-center drop-down-box">
+          <%= image_tag("menu-icon.png", size: "20x20", class: "layout-drop dropdown-toggle", :alt => "menu logo", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+          <li class="nav-item dropdown">
+            <%= image_tag "dustin.jpeg", class: "avatar margin-top" %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Sign up", "#", class: "dropdown-item" %>
+              <%= link_to "Log in", "#", class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Host your home", "#", class: "dropdown-item" %>
+              <%= link_to "Rate an experience", "#", class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Messages", "#", class: "dropdown-item" %>
+              <%= link_to "Notifications", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        </div>
+    </div>
+  </div>
+</nav>
