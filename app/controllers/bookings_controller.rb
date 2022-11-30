@@ -2,13 +2,6 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
   before_action :set_pet_home, only: %i[new create]
 
-  def show
-  end
-
-  # def new
-  #   @booking = Booking.new
-  # end
-
   def create
     @booking = Booking.new(safe_params)
     @booking.pet_home = @pet_home
