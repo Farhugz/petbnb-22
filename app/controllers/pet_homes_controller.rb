@@ -1,6 +1,6 @@
 class PetHomesController < ApplicationController
   def index
-    @pet_home = PetHome.all
+    @pet_homes = PetHome.all
   end
 
   def show
@@ -38,6 +38,6 @@ class PetHomesController < ApplicationController
   private
 
   def pet_home_params
-    params.require(:pet_name).permit(:location, :pet_type, :responsibilities, :capacity, :name, :description, :start_date, :end_date, :emergency_info)
+    params.require(:pet_home).permit(:location, :pet_type, :responsibilities, :capacity, :name, :description, :start_date, :end_date, :emergency_info)
   end
 end
