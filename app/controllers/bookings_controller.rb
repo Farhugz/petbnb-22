@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
   end
 
   def set_pet_home
-    @pet_home = Pet_home.find(params[:id])
+    @pet_home = PetHome.find(params[:id])
   end
 
   def safe_params

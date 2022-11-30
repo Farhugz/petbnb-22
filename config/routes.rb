@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :pet_homes do
-    resources :booking, except: :index
+    resources :bookings, except: :index
   end
-  resources :booking, only: :destroy
+  resources :bookings, only: :destroy
 end
