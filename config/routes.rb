@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :pet_homes do
-    resources :bookings, except: %i[index show new]
+  resources :pet_homes, except: :edit do
+    resources :bookings, except: %i[index show new edit]
   end
+  get 'bookings/my_bookings', to: 'bookings#my_bookings'
   resources :bookings, only: :destroy
 end
