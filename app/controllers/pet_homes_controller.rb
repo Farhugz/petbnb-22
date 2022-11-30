@@ -1,10 +1,11 @@
 class PetHomesController < ApplicationController
+  before_action :set_pet_home, only: %i[show edit update destroy]
+
   def index
     @pet_home = PetHome.all
   end
 
   def show
-    @pet_home = PetHome.find(params[:id])
     @booking = Booking.new
   end
 
@@ -26,17 +27,19 @@ class PetHomesController < ApplicationController
   end
 
   def update
-    @pet_home = PetHome.find(params[:id])
     @pet_home.update(pet_home_params)
     redirect_to pet_home_path(@pet_home)
   end
 
   def destroy
-    @pet_home = PetHome.find(params[:id])
     @pet_home.destroy
   end
 
   private
+
+  def set_pet_home
+    @pet_home = PetHome.find(params[:id])
+  end
 
   def pet_home_params
     params.require(:pet_name).permit(:location, :pet_type, :responsibilities, :capacity, :name, :description, :start_date, :end_date, :emergency_info)
