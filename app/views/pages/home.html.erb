@@ -1,49 +1,55 @@
-<br>
-  <div class="container" class=>
+<%# MAIN BLOCK CAROUSEL%>
+<div class="container-carousel">
   <div id="banner">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag "cat2.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+      <div class="carousel-item active">
+        <%= image_tag "cat2.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+        <div class="carousel-caption">
+          <%= link_to "Discover our PetHomes", pet_homes_path, class: "btn btn-light btn-rounded" %>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "dog1.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "cat1.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "dog2.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+      </div>
     </div>
-    <div class="carousel-item">
-      <%= image_tag "dog1.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<%# SECOND BLOCK %>
+  <div class="container">
+    <div>
+      <h2 class="mainheader">Go on vacation and have a nice fluffy company</h2>
+      <hr>
     </div>
-    <div class="carousel-item">
-      <%= image_tag "cat1.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+    <div class="homegrid">
+    <div>
+    <%= image_tag('pet1.png') %>
+    <h5>Vacation stay for free </h5>
+    <p>You can stay at the pet home for free and enjoy your vacation </p>
     </div>
-     <div class="carousel-item">
-      <%= image_tag "dog2.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+    <div>
+    <%= image_tag('pet2.png') %>
+    <h5>Only rule - taking care </h5>
+    <p> The pet owner will trust you to take a proper care of a pet and you will take a full responsibility </p>
     </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-  </div>
-  </div>
-  <div>
-    <h2 class="mainheader">Go on vacation and have a nice fluffy company</h2>
-    <hr>
-  </div>
-  <div class="homegrid">
-  <div>
-  <%= image_tag('pet1.png') %>
-  <h5>Vacation stay for free </h5>
-  <p>You can stay at the pet home for free and enjoy your vacation </p>
-  </div>
-  <div>
-  <%= image_tag('pet2.png') %>
-  <h5>Only rule - taking care </h5>
-  <p> The pet owner will trust you to take a proper care of a pet and you will take a full responsibility </p>
-  </div>
-  <div>
-  <%= image_tag('pet3.png') %>
-  <h5>Emergency kit </h5>
-  <p>You will have all information provided to take care of a pet</p>
-  </div>
+    <div>
+    <%= image_tag('pet3.png') %>
+    <h5>Emergency kit </h5>
+    <p>You will have all information provided to take care of a pet</p>
+    </div>
   </div>

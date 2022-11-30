@@ -8,33 +8,34 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="d-inline-flex" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Pet homes", pet_homes_path, class: "nav-link" %>
-          </li>
-          <div class="d-inline-flex align-items-center drop-down-box">
-          <%= image_tag("menu-icon.png", size: "20x20", class: "layout-drop dropdown-toggle", :alt => "menu logo", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
-          <li class="nav-item dropdown">
-            <%= image_tag "account-circle.png", class: "avatar margin-top" %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", "#", class: "dropdown-item" %>
-              <%= link_to "My pet home", "#", class: "dropdown-item border-top" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "Bookings Requests", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item border-top" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+      <div class="d-inline-flex" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item active">
+                <%= link_to "Home", root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Pet homes", pet_homes_path, class: "nav-link" %>
+              </li>
+              <div class="d-inline-flex align-items-center drop-down-box">
+                  <li class="nav-item dropdown">
+                    <%= image_tag("menu-icon.png", size: "20x20", class: "layout-drop dropdown-toggle", :alt => "menu logo", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <%= link_to "My bookings", "#", class: "dropdown-item" %>
+                      <%= link_to "My pet home", "#", class: "dropdown-item border-top" %>
+                      <div class="dropdown-divider"></div>
+                      <%= link_to "Bookings Requests", "#", class: "dropdown-item" %>
+                      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item border-top" %>
+                    </div>
+                    <%= image_tag "account-circle.png", class: "avatar margin-top" %>
+                  </li>
+              </div>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+        </ul>
+      </div>
   </div>
 </div>
