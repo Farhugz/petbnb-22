@@ -1,9 +1,9 @@
 class PetHomePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 
   def show?
@@ -11,22 +11,22 @@ class PetHomePolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user
   end
 
   def new?
     create?
   end
 
-  # def update?
-  #   record.user == user
-  # end
+  def update?
+    record.user == user
+  end
 
-  # def edit?
-  #   update?
-  # end
+  def edit?
+    update?
+  end
 
-  # def destroy?
-  #   record.user == user
-  # end
+  def destroy?
+    record.user == user
+  end
 end
