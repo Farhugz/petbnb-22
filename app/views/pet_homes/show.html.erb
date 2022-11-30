@@ -15,31 +15,34 @@
 
     <div class="flex-container mt-2" id="multi-image-block">
       <%# INSERT IMAGE #2 %>
-      <div class="flex-items shadow">
-        <ul>
-            <li>
-              <img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05466_kwlv0n.jpg" data-masonry='{"percentPosition": true }' alt="A Toyota Previa covered in graffiti" loading="lazy">
-            </li>
-            <li>
-              <img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05621_zgtcco.jpg" alt="Interesting living room light through a window" loading="lazy">
-            </li>
-            <li>
-              <img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05513_gfbiwi.jpg" alt="Sara on a red bike" loading="lazy">
-            </li>
-            <li>
-              <img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05588_nb0dma.jpg" alt="XOXO venue in between talks" loading="lazy">
-            </li>
-            <li>
-              <img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05459_ziuomy.jpg" alt="Trees lit by green light during dusk" loading="lazy">
-            </li>
-            <li>
-              <img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05586_oj8jfo.jpg" alt="Portrait of Justin Pervorse" loading="lazy">
-            </li>
-            <li>
-              <img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05465_dtkwef.jpg" alt="Empty bike racks outside a hotel" loading="lazy">
-            </li>
-          </ul>
-      </div>
+
+        <div class="container" class=>
+          <div id="banner">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= image_tag "cat2.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "dog1.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "cat1.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "dog2.jpg", class: "d-block w-100 ", style:'height: 520px; object-fit: cover;' %>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          </div>
+        </div>
     </div>
 
 
@@ -49,7 +52,7 @@
         <%# EDIT AND DELETE pet_home %>
 
 
-        <div><h4>Entire pet home hosted by <strong>Dustin</strong></h4></div>
+        <div><h4>This Pet home hosted by <strong>Robert</strong></h4></div>
         <%# 3 BEST FEATURES %>
         <%# BUNKER COVER %>
         <div><h2><strong>PETHOME<span style="color: #68B984">INSURANCE</span></strong></h2></div>
@@ -78,4 +81,3 @@
 <div>
   <%= render "form", pet_home: @pet_home, booking: @booking %>
 </div>
-
