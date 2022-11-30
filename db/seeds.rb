@@ -30,3 +30,13 @@ end
   pet_home = PetHome.new(user: user, name: name, description: description, pet_type: pet_type, location: location, capacity: capacity, responsibilities: responsibilities, emergency_info: emergency_info, start_date: start_date, end_date: end_date)
   pet_home.save
 end
+
+20.times do
+  user = User.all.sample
+  pet_home = PetHome.all.sample
+  start_date = Date.today
+  end_date = Date.tomorrow
+  number_of_guest = rand(1..5)
+  booking = Booking.new(user: user, pet_home: pet_home, start_date: start_date, end_date: end_date, number_of_guest: number_of_guest)
+  booking.save
+end

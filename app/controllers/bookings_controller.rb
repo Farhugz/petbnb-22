@@ -2,16 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
   before_action :set_pet_home, only: %i[new create]
 
-  def show
-  end
-
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(safe_params)
     @booking.pet_home = @pet_home
+    @booking.user = current_user
     if @booking.save
       redirect_to pet_home_path(@pet_home)
     else
@@ -42,7 +36,7 @@ class BookingsController < ApplicationController
   end
 
   def set_pet_home
-    @pet_home = Pet_home.find(params[:id])
+    @pet_home = PetHome.find(params[:pet_home_id])
   end
 
   def safe_params
