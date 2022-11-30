@@ -1,11 +1,10 @@
 <h1><strong> Pet Homes <strong></h1>
 
-
 <div class="main-container">
       <div class="cards">
     <% @pet_home.each do |pet_home| %>
     <div class="card"> <%= image_tag "pic1.jpg" %>
-    <p><%= pet_home.name  %></p>
+    <p><%= link_to pet_home.name, pet_home_path(pet_home)  %></p>
     </div>
     <% end %>
 
