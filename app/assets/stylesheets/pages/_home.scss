@@ -1,6 +1,20 @@
 // Specific CSS for your home-page
 .mainheader {
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.carousel {
+  margin-top: 0;
+  max-width: 100%;
+}
+
+.homegrid {
+  margin-bottom: 5em;
+}
+
+.btn-rounded {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.384);
 }

@@ -1,0 +1,26 @@
+<h2>My Bookings</h2>
+
+<% @my_bookings.each do |booking| %>
+  <p>Start date: <%= booking.start_date %></p>
+  <p>End date: <%= booking.end_date %></p>
+  <p>Number of guest: <%= booking.number_of_guest %></p>
+<% end %>
+
+<h2>My Pet Homes</h2>
+
+<% @my_pet_homes.each do |pet_home| %>
+  <p><strong>PET HOME</strong></p>
+  <p>Name: <%= pet_home.name %>
+  <%= pet_home.start_date %>
+  <%= pet_home.end_date %>
+  <%= pet_home.capacity %></p>
+  <% @requests.each do |request| %>
+    <p><strong>REQUEST</strong></p>
+    <p><%= request.user.first_name %> <%= request.user.last_name %></p>
+    <p><%= request.start_date %></p>
+    <p><%= request.end_date %></p>
+    <p><%= request.number_of_guest %></p>
+    <%= link_to "Accept", approved_booking_path(request), data: { "turbo-method": :patch } %>
+    <%= link_to "Reject", reject_booking_path(request), data: { "turbo-method": :patch } %>
+  <% end %>
+<% end %>
