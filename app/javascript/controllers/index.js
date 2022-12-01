@@ -8,6 +8,10 @@ import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 
+import MapController from "./map_controller"
+application.register("map", MapController)
+
+
 // init Masonry
 var $grid = $('.grid').masonry({
   itemSelector: '.grid-item',
@@ -19,3 +23,4 @@ var $grid = $('.grid').masonry({
 $grid.imagesLoaded().progress( function() {
   $grid.masonry();
 });
+

@@ -7,6 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "date"
 
+Booking.destroy_all
+PetHome.destroy_all
+User.destroy_all
+
 20.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
@@ -16,12 +20,13 @@ require "date"
   user.save
 end
 
+locations = ["Rome", "Salvador", "Durban", "Agadez", "Montreal", "Osaka", "Moscow", "Agra", "Shangjai", "Las Vegas", "Seoul", "Geneva", "Rouen", "Berlin", "Toronto", "Cordoba", "Perth", "Tel Aviv", "Vienna", "Irkutsk", "New York", "Saransk", "Bratislava", "Amsterdam", "Cusco", "Austin", "San Francisco"]
 20.times do
   user = User.all.sample
   name = Faker::FunnyName.name
   description = Faker::Lorem.paragraph
-  pet_type = ["cat", "dog", "dragon", "snake", "cow", "monkey"].sample
-  location = Faker::Address.full_address
+  pet_type = ["cat", "dog", "dragon", "snake", "cow"].sample
+  location = locations.sample
   capacity = rand(1..10)
   responsibilities = Faker::Lorem.paragraph
   emergency_info = Faker::Lorem.paragraph
