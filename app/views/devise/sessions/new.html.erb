@@ -1,20 +1,88 @@
-<h2>Log in</h2>
-
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+  <!-- Section: Design Block -->
+  <section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+
+    <!-- Sign in CARD -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Log in</h2>
+              <form>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+                </div>
+
+                <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              </div>
+
+                <!-- Submit button -->
+                <div class="form-actions btn btn-dark btn-rounded">
+                  <%= f.button :submit, "Log in" %>
+                </div>
+                <br>
+                <br>
+                <div class="form-actions btn btn-dark btn-rounded">
+                  <%= link_to "Sign up with an email", new_user_registration_path %>
+                </div>
+
+                <!-- Register buttons -->
+                <br>
+                <br>
+                <div class="text-center">
+                  <p>or sign in with:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
 <% end %>
-
-<%= render "devise/shared/links" %>
