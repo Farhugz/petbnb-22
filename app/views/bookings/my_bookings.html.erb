@@ -1,26 +1,245 @@
-<h2>My Bookings</h2>
+<div class="container">
 
-<% @my_bookings.each do |booking| %>
-  <p>Start date: <%= booking.start_date %></p>
-  <p>End date: <%= booking.end_date %></p>
-  <p>Number of guest: <%= booking.number_of_guest %></p>
-<% end %>
+        <div><h2>My Bookings</h2></div>
 
-<h2>My Pet Homes</h2>
+        <% @my_bookings.each do |booking| %>
+          <p>Start date: <%= booking.start_date %></p>
+          <p>End date: <%= booking.end_date %></p>
+          <p>Number of guest: <%= booking.number_of_guest %></p>
+        <% end %>
 
-<% @my_pet_homes.each do |pet_home| %>
-  <p><strong>PET HOME</strong></p>
-  <p>Name: <%= pet_home.name %>
-  <%= pet_home.start_date %>
-  <%= pet_home.end_date %>
-  <%= pet_home.capacity %></p>
-  <% @requests.each do |request| %>
-    <p><strong>REQUEST</strong></p>
-    <p><%= request.user.first_name %> <%= request.user.last_name %></p>
-    <p><%= request.start_date %></p>
-    <p><%= request.end_date %></p>
-    <p><%= request.number_of_guest %></p>
-    <%= link_to "Accept", approved_booking_path(request), data: { "turbo-method": :patch } %>
-    <%= link_to "Reject", reject_booking_path(request), data: { "turbo-method": :patch } %>
-  <% end %>
-<% end %>
+    <!--------------- FIRST TABLE - MY Bookings ------------>
+
+        <table class="table align-middle mb-0 bg-white">
+          <thead class="bg-light">
+            <tr>
+              <th>HomeOwner UserName</th>
+              <th>Number of guests</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">John Doe</p>
+                    <p class="text-muted mb-0">john.doe@gmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">6 guests</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">18/11/22</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">28/11/22</p>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt="" style="width: 45px; height: 45px"/>
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Alex Ray</p>
+                    <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">3 guests</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">29/11/22</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">03/12/22</p>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt="" style="width: 45px; height: 45px"/>
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Kate Hunington</p>
+                    <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">2 guests</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">05/12/22</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">18/12/22</p>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div><h2>My Pet Homes</h2></div>
+
+        <% @my_pet_homes.each do |pet_home| %>
+          <p><strong>PET HOME</strong></p>
+          <p>Name: <%= pet_home.name %>
+          <%= pet_home.start_date %>
+          <%= pet_home.end_date %>
+          <%= pet_home.capacity %></p>
+          <% @requests.each do |request| %>
+            <p><strong>REQUEST</strong></p>
+            <p><%= request.user.first_name %> <%= request.user.last_name %></p>
+            <p><%= request.start_date %></p>
+            <p><%= request.end_date %></p>
+            <p><%= request.number_of_guest %></p>
+            <%= link_to "Accept", approved_booking_path(request), data: { "turbo-method": :patch } %>
+            <%= link_to "Reject", reject_booking_path(request), data: { "turbo-method": :patch } %>
+          <% end %>
+        <% end %>
+
+
+
+
+        <!---------- SECOND TABLE - PET HOMES -------->
+
+        <table class="table align-middle mb-0 bg-white">
+          <thead class="bg-light">
+            <tr>
+              <th>UserName</th>
+              <th>Number of guests</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">John Doe</p>
+                    <p class="text-muted mb-0">john.doe@gmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">6 guests</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">18/11/22</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">28/11/22</p>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt="" style="width: 45px; height: 45px"/>
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Alex Ray</p>
+                    <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">3 guests</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">29/11/22</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">03/12/22</p>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt="" style="width: 45px; height: 45px"/>
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Kate Hunington</p>
+                    <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">2 guests</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">05/12/22</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">18/12/22</p>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Accept
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Reject
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+</div>
