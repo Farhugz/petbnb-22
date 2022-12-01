@@ -1,15 +1,17 @@
 <h1><strong> Pet Homes <strong></h1>
 
-
-<div class="main-container">
-      <div class="cards">
-    <% @pet_home.each do |pet_home| %>
-    <div class="card"> <%= image_tag "pic1.jpg" %>
-    <p><%= pet_home.name  %></p>
-    </div>
-    <% end %>
-
+<div class="container">
+  <div class="cards">
+    <% @pet_homes.each do |pet_home| %>
+      <div class="card"> <%= image_tag "pic1.jpg" %>
+        <p><%= pet_home.name  %></p>
+        <p><%= pet_home.location %></p>
       </div>
-      <!-- Change the token below (https://www.mapbox.com/account/access-tokens/) -->
-      <%# <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibWluZ3VsYWJhIiwiYSI6ImNsYWNrOGthczBiMmQzcHJhZXNiNGc4ZDcifQ.QkRqXUe7fBr0DzW7S5DSHA'> %>
-    </div>
+    <% end %>
+  </div>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
