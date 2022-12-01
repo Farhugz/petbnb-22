@@ -141,7 +141,7 @@ PetHome.create!([{
   responsibilities: "Just be available with a stick of bamboo and/or a big hug at all times.",
   emergency_info: "I promise you, you won't need to provide for this gut too much for this sloth. He just wants a buddy to practice his hand puppets with.",
   start_date: Date.today,
-  end_date: Date.tommorrow,
+  end_date: Date.tomorrow,
 },
 {
   user: User.third,
@@ -165,7 +165,7 @@ PetHome.create!([{
   responsibilities: "a",
   emergency_info: "b",
   start_date: Date.today,
-  end_date: Date.tomoorrow
+  end_date: Date.tomorrow
 },
 {
   user: User.fourth,
