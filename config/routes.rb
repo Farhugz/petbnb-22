@@ -16,5 +16,6 @@ Rails.application.routes.draw do
       patch :reject
     end
   end
+  get "bookings/my_bookings", to: "bookings#my_bookings"
   resources :bookings, only: :destroy
 end
