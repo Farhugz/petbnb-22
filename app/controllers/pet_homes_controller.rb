@@ -16,7 +16,6 @@ class PetHomesController < ApplicationController
         image_url: helpers.asset_url("pet1.png")
       }
     end
-
     @pet_home = policy_scope(PetHome)
   end
 
