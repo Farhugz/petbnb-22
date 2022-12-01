@@ -7,16 +7,16 @@
     </div>
 
   <%# MOBILE TITLE BAR %>
-    <div class="">
-      <div><h3><%= @pet_home.name %></h3></div>
-      <div>⭐️ 4.7 | 17 reviews | <%= @pet_home.location %></div>
-    </div>
+
 
   <%# MULTI IMAGE BLOCK %>
 
-    <div class="flex-container mt-2" id="multi-image-block">
-      <%# INSERT IMAGE #2 %>
-
+      <div class="flex-container mt-2" id="multi-image-block">
+        <%# INSERT IMAGE #2 %>
+        <div class="mg-1">
+          <div><h3><%= @pet_home.name %></h3></div>
+          <div class="stars">⭐️ 4.7 | 17 reviews | <%= @pet_home.location %></div>
+        </div>
         <div class="container" class=>
           <div id="banner">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -44,33 +44,41 @@
           </button>
           </div>
         </div>
-    </div>
+      </div>
 
 
   <%# DESCRIPTION BLOCK %>
-    <div class="flex3-container mt-5">
-      <div class="flex3-items ">
+    <div class="row mt-5">
+      <div class="col-md-8">
         <%# EDIT AND DELETE pet_home %>
 
 
-        <div><h4>This Pet home hosted by <strong>Robert</strong></h4></div>
+        <div><h4 class="stars2">This Pet home hosted by <strong>Robert</strong></h4></div>
         <%# 3 BEST FEATURES %>
         <%# BUNKER COVER %>
-        <div><h2><strong>PETHOME<span style="color: #68B984">INSURANCE</span></strong></h2></div>
-        <div  class="border-bottom mb-4"><p>Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</p></div>
+        <div class="mg-1">
+          <h2 class="stars2"><strong>PETHOME<span style="color: #68B984">INSURANCE</span></strong></h2>
+        </div>
+        <div  class="border-bottom mb-4"><p class="stars2">Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</p></div>
 
         <%# ABOUT THIS SPACE %>
-        <div><h4>About this space</h4></div>
-        <div><p> <%= @pet_home.description %></p></div>
+        <div class="mg-1"><h4 class="stars2">About this space</h4></div>
+        <div><p class="stars2"> <%= @pet_home.description %></p></div>
 
       </div>
 
-      <div class="flex3-items ">
-        <div id="booking-component" class="shadow-lg">
-        <%# INSERT BOOKING COMPONENT HERE %>
-          <h4 class="mb-3 border-bottom pb-3">Book this Pet Home now!</h4>
+      <div class="col-md-4">
+        <div id="booking-component" class="card-category shadow-lg">
+          <%# INSERT BOOKING COMPONENT HERE %>
+          <h4 class="text-center">Book this Pet Home</h4>
+          <%= simple_form_for [@pet_home, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.input :number_of_guest %>
+            <%= f.button :submit, class: "create-button" %>
+          <% end %>
         </div>
-        <%= render "shared/form", pet_home: @pet_home, booking: @booking %>
+
       </div>
 
     </div>
