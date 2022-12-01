@@ -29,6 +29,10 @@ class BookingsController < ApplicationController
     redirect_to pet_home_path(@booking.pet_home), status: :see_other
   end
 
+  def my_bookings
+    Booking.search
+  end
+
   private
 
   def set_booking

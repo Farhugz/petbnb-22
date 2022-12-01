@@ -35,6 +35,8 @@ class PetHomesController < ApplicationController
     @pet_home.destroy
   end
 
+  
+
   private
 
   def set_pet_home

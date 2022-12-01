@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :pet_homes do
     resources :bookings, except: %i[index show new]
   end
+  get "bookings/my_bookings", to: "bookings#my_bookings"
   resources :bookings, only: :destroy
 end
