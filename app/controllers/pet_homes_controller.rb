@@ -1,8 +1,24 @@
 class PetHomesController < ApplicationController
   before_action :set_pet_home, only: %i[show edit update destroy]
 
+  # def index
+  #   @pet_home = PetHome.all
+  # end
+
   def index
+    @pet_homes = PetHome.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @pet_homes.geocoded.map do |pet_home|
+      {
+        lat: pet_home.latitude,
+        lng: pet_home.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {pet_home: pet_home}),
+        image_url: helpers.asset_url("pet1.png")
+      }
+    end
+
     @pet_home = policy_scope(PetHome)
+
   end
 
   def show
