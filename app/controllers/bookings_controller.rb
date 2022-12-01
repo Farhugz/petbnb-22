@@ -1,5 +1,7 @@
+require "date"
+
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[update destroy]
+  before_action :set_booking, only: %i[update destroy approved reject]
   before_action :set_pet_home, only: %i[create]
 
   def create
@@ -30,8 +32,28 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
+    @my_pet_homes = PetHome.where(user: current_user)
+    @bookings = Booking.all
+    @requests = @bookings.select { |booking| booking.pet_home.user == current_user && booking.approved.nil? }
     @my_bookings = policy_scope(Booking)
-    authorize @my_bookings
+  end
+
+  def approved
+    authorize @booking
+    if @booking.update(approved: true)
+      redirect_to my_bookings_bookings_path
+    else
+      render :my_bookings, status: :unprocessable_entity
+    end
+  end
+
+  def reject
+    authorize @booking
+    if @booking.update(approved: false)
+      redirect_to my_bookings_bookings_path
+    else
+      render :my_bookings, status: :unprocessable_entity
+    end
   end
 
   private

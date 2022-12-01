@@ -22,7 +22,15 @@ class BookingPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def my_bookings
+  def my_bookings?
+    record.user == user
+  end
+
+  def approved?
+    user
+  end
+
+  def reject?
     user
   end
 end
