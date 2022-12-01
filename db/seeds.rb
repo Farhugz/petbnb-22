@@ -9,15 +9,6 @@ require "date"
 
 
 
-# 20.times do
-#   user = User.all.sample
-#   pet_home = PetHome.all.sample
-#   start_date = Date.today
-#   end_date = Date.tomorrow
-#   number_of_guest = rand(1..5)
-#   booking = Booking.new(user: user, pet_home: pet_home, start_date: start_date, end_date: end_date, number_of_guest: number_of_guest)
-#   booking.save
-# end
 
 User.create!([{
   first_name: "Steve",
@@ -42,76 +33,76 @@ User.create!([{
   last_name: "Clinton",
   email: "whitehousescandal@monica.com",
   password: "123456"
-}])
+  }])
 
-# locations = ["rome", "milan", "london", "cairo", "montreal", "osaka", "moscow", "agra", "shangjai", "las vegas", "seoul", "geneva", "rouen", "berlin", "buffalo", "milan", "perth", "tel aviv", "vienna","irkutsk"]
-# location = locations.sample
+  # locations = ["rome", "milan", "london", "cairo", "montreal", "osaka", "moscow", "agra", "shangjai", "las vegas", "seoul", "geneva", "rouen", "berlin", "buffalo", "milan", "perth", "tel aviv", "vienna","irkutsk"]
+  # location = locations.sample
 
-PetHome.create!([{
-  user: User.first,
-  name: "Rocky",
-  description: "Rocky is a fun-loving, but hyper-active. Loves anything that involves basking in the sun!",
-  pet_type: "Ferret",
-  location: "Berlin",
-  capacity: 4,
-  responsibilities: "Very easy...just don't let him get away. He's a bit of a weasel!",
-  emergency_info: "Cell phone: 017786253459",
-  start_date: Date.today,
-  end_date: Date.tomorrow
-},
-{
-  user: User.second,
-  name: "Curly, Stinky and Forrest",
-  description: "Three of the most lovable Albino Siberian Tigers you'll ever high-five!",
-  pet_type: "Siberian Tigers",
-  location: "Kansas",
-  capacity: 100,
-  responsibilities: "Bring plenty of friends, as you will need plenty of helping hands to feed, play-with and nurture these lovable hellions!",
-  emergency_info: "Everything you will need is onsite, including a medical doctor and certified veterinarian",
-  start_date: Date.today,
-  end_date: Date.tomorrow
-},
-{
-  user: User.third,
-  name: "Susie-Q",
-  description: "Siamese Super Cat",
-  pet_type: "Siamese Cat",
-  location: "Austin",
-  capacity: 1,
-  responsibilities: "Tending to Susie-Q's every need. She is my princess and she knows it. Extremely high-strung! Bring your culinary skills as she only eats salmon!",
-  emergency_info: "Cell Phone: 1-534-999-1212",
-  start_date: Date.today,
-  end_date: Date.tomorrow
-},
-{
-  user: User.first,
-  name: "Boris 'The Great'",
-  description: "Boris is a nit-picky, food-loving crocodile direct from the Amazon River. Careful, he is picky about his feeders. Entertain him or you may become his lunch!",
-  pet_type: "Amazonian Crocodile",
-  location: "Amazon River",
-  capacity: 4,
-  responsibilities: "Entertainment and food distribution, and he likes both hand-in-hand. Be ready to dance, jump and juggle to put a crocodile smile on his mouth.",
-  emergency_info: "Unfortunately there is not much around and any help would be a little slow. Please only serious inquiries.",
-  start_date: Date.today,
-  end_date: Date.tomorrow
-},
-{
-  user: User.second,
-  name: "Mary and Larry",
-  description: "Just two of your average life-loving, hole-digging, Golden Retrievers",
-  pet_type: "Dogs",
-  location: "Chicago",
-  capacity: 2,
-  responsibilities: "Be the square that I am! Pretty tradtional, just feed them, play with them and read them a bedtime story.",
-  emergency_info: "Cell number: 017626793647 Veterinary telephone: 030276278763",
-  start_date: Date.today,
-  end_date: Date.tomorrow
-},
-{
-  user: User.third,
-  name: "Sarah",
-  description: "Just your average, cute painted turtle",
-  pet_type: "Turtle",
+  PetHome.create!([{
+    user: User.first,
+    name: "Rocky",
+    description: "Rocky is a fun-loving, but hyper-active. Loves anything that involves basking in the sun!",
+    pet_type: "Ferret",
+    location: "Berlin",
+    capacity: 4,
+    responsibilities: "Very easy...just don't let him get away. He's a bit of a weasel!",
+    emergency_info: "Cell phone: 017786253459",
+    start_date: Date.today,
+    end_date: Date.tomorrow
+  },
+  {
+    user: User.second,
+    name: "Curly, Stinky and Forrest",
+    description: "Three of the most lovable Albino Siberian Tigers you'll ever high-five!",
+    pet_type: "Siberian Tigers",
+    location: "Kansas",
+    capacity: 100,
+    responsibilities: "Bring plenty of friends, as you will need plenty of helping hands to feed, play-with and nurture these lovable hellions!",
+    emergency_info: "Everything you will need is onsite, including a medical doctor and certified veterinarian",
+    start_date: Date.today,
+    end_date: Date.tomorrow
+  },
+  {
+    user: User.third,
+    name: "Susie-Q",
+    description: "Siamese Super Cat",
+    pet_type: "Siamese Cat",
+    location: "Austin",
+    capacity: 1,
+    responsibilities: "Tending to Susie-Q's every need. She is my princess and she knows it. Extremely high-strung! Bring your culinary skills as she only eats salmon!",
+    emergency_info: "Cell Phone: 1-534-999-1212",
+    start_date: Date.today,
+    end_date: Date.tomorrow
+  },
+  {
+    user: User.first,
+    name: "Boris 'The Great'",
+    description: "Boris is a nit-picky, food-loving crocodile direct from the Amazon River. Careful, he is picky about his feeders. Entertain him or you may become his lunch!",
+    pet_type: "Amazonian Crocodile",
+    location: "Amazon River",
+    capacity: 4,
+    responsibilities: "Entertainment and food distribution, and he likes both hand-in-hand. Be ready to dance, jump and juggle to put a crocodile smile on his mouth.",
+    emergency_info: "Unfortunately there is not much around and any help would be a little slow. Please only serious inquiries.",
+    start_date: Date.today,
+    end_date: Date.tomorrow
+  },
+  {
+    user: User.second,
+    name: "Mary and Larry",
+    description: "Just two of your average life-loving, hole-digging, Golden Retrievers",
+    pet_type: "Dogs",
+    location: "Chicago",
+    capacity: 2,
+    responsibilities: "Be the square that I am! Pretty tradtional, just feed them, play with them and read them a bedtime story.",
+    emergency_info: "Cell number: 017626793647 Veterinary telephone: 030276278763",
+    start_date: Date.today,
+    end_date: Date.tomorrow
+  },
+  {
+    user: User.third,
+    name: "Sarah",
+    description: "Just your average, cute painted turtle",
+    pet_type: "Turtle",
   location: "San Tropez",
   capacity: 4,
   responsibilities: "Truthfully this guy is pretty easy. Bring him outside twice a day to the garden to munch on some lettuce and don't be so fast, he takes awhile.",
@@ -286,4 +277,14 @@ PetHome.create!([{
   emergency_info: "o",
   start_date: Date.today,
   end_date: Date.tomorrow
-}])
+  }])
+
+  20.times do
+    user = User.all.sample
+    pet_home = PetHome.all.sample
+    start_date = Date.today
+    end_date = Date.tomorrow
+    number_of_guest = rand(1..3)
+    booking = Booking.new(user: user, pet_home: pet_home, start_date: start_date, end_date: end_date, number_of_guest: number_of_guest)
+    booking.save
+  end
