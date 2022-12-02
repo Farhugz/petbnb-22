@@ -7,9 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "date"
 
-
-
-
 User.create!([{
   first_name: "Steve",
   last_name: "Erwin",
