@@ -1,12 +1,83 @@
 <%= simple_form_for(@pet_home) do |f| %>
-  <%= f.input :location %>
-  <%= f.input :pet_type %>
-  <%= f.input :responsibilities %>
-  <%= f.input :capacity%>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :emergency_info %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <!-- Section: Design Block -->
+  <section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+          background-color: #68B984;
+          backdrop-filter: blur(80px);
+          height: 200px;
+          "></div>
+    <!-- Background image -->
+
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background-color: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5"><strong>CREATEYOUR<span style="color: #68B984"> HOME</span></strong></h2>
+
+            <form class="troll">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline troll">
+                    <%= f.input :name %>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline troll">
+                    <%= f.input :location %>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline troll">
+                    <%= f.input :capacity%>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline troll">
+                    <%= f.input :pet_type %>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Larger/higher input -->
+              <div class="form-outline mb-4 troll">
+                <%= f.input :description %>
+              </div>
+              <div class="form-outline mb-4 troll">
+                <%= f.input :responsibilities %>
+              </div>
+              <div class="form-outline mb-4 troll">
+                <%= f.input :emergency_info %>
+              </div>
+
+              <!-- Start-Date input -->
+              <div class="form-outline mb-4 rounded troll">
+                <%= f.input :start_date %>
+              </div>
+              <!-- End-Date input -->
+              <div class="form-outline mb-4 rounded troll">
+                <%= f.input :end_date %>
+              </div>
+
+              <br>
+              <br>
+              <!-- Submit button -->
+              <div class="form-actions">
+                  <%= f.button :submit, class: "create-button" %>
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
 <% end %>
