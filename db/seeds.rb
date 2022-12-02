@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "date"
+<<<<<<< HEAD
+=======
+require "open-uri"
+>>>>>>> d1d07a7ad983fd363eafd9c36711365dc8b5ed67
 
 User.create!([{
   first_name: "Steve",
@@ -100,12 +104,12 @@ User.create!([{
     name: "Sarah",
     description: "Just your average, cute painted turtle",
     pet_type: "Turtle",
-  location: "San Tropez",
-  capacity: 4,
-  responsibilities: "Truthfully this guy is pretty easy. Bring him outside twice a day to the garden to munch on some lettuce and don't be so fast, he takes awhile.",
-  emergency_info: "Full medical staff on-site for this one. Complete ",
-  start_date: Date.today,
-  end_date: Date.tomorrow
+    location: "San Tropez",
+    capacity: 4,
+    responsibilities: "Truthfully this guy is pretty easy. Bring him outside twice a day to the garden to munch on some lettuce and don't be so fast, he takes awhile.",
+    emergency_info: "Full medical staff on-site for this one. Complete ",
+    start_date: Date.today,
+    end_date: Date.tomorrow
 },
 {
   user: User.first,
@@ -274,7 +278,7 @@ User.create!([{
   emergency_info: "o",
   start_date: Date.today,
   end_date: Date.tomorrow
-  }])
+}])
 
   20.times do
     user = User.all.sample
