@@ -57,16 +57,19 @@
               Pages
             </h6>
             <p>
-              <a href="#!" class="text-reset">My bookings</a>
+              <%= link_to "Home", root_path, class: "dropdown-item" %>
             </p>
             <p>
-              <a href="#!" class="text-reset">New pet home</a>
+              <%= link_to "New pet home", new_pet_home_path, class: "dropdown-item" %>
             </p>
             <p>
-              <a href="#!" class="text-reset">Account Settings</a>
+              <%= link_to "My bookings", my_bookings_bookings_path, class: "dropdown-item" %>
             </p>
             <p>
-              <a href="#!" class="text-reset">Log Out</a>
+              <%= link_to "Account settings", edit_user_registration_path, class: "dropdown-item" %>
+            </p>
+            <p>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </p>
           </div>
           <!-- Grid column -->
