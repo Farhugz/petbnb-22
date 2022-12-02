@@ -1,5 +1,6 @@
 class PetHome < ApplicationRecord
   belongs_to :user
+  has_many_attached :photos
 
   validates :location, :pet_type, :capacity, :name, :description, :responsibilities, :emergency_info, presence: true
 
