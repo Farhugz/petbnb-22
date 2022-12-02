@@ -68,11 +68,17 @@
               <br>
               <br>
               <!-- Submit button -->
+              <div class="mt-2">
+                  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+              </div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
               <div class="form-actions">
                   <%= f.button :submit, class: "create-button" %>
               </div>
-
-
             </form>
           </div>
         </div>

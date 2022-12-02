@@ -51,8 +51,6 @@ class PetHomesController < ApplicationController
     @pet_home.destroy
   end
 
-  
-
   private
 
   def set_pet_home
@@ -60,6 +58,6 @@ class PetHomesController < ApplicationController
   end
 
   def pet_home_params
-    params.require(:pet_home).permit(:location, :pet_type, :responsibilities, :capacity, :name, :description, :start_date, :end_date, :emergency_info)
+    params.require(:pet_home).permit(:location, :pet_type, :responsibilities, :capacity, :name, :description, :start_date, :end_date, :emergency_info, photos: [])
   end
 end
