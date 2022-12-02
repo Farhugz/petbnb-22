@@ -1,11 +1,18 @@
+<div class="p-5 bg-image" style="
+          background-color: #68B984;
+          backdrop-filter: blur(100px);
+          height: 200px;
+          "></div>
 
-<div class="container">
+<div class="container big-container" style="
+          margin-top: -100px">
   <div class="cards">
     <% @pet_homes.each do |pet_home| %>
       <%= link_to pet_home_path(pet_home) do %>
-        <div class="card"> <%= image_tag "pic1.jpg" %>
-          <p><%= pet_home.name  %></p>
-          <p><%= pet_home.location %></p>
+        <div class="card"  style="background-color: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
+          <%= image_tag "pic1.jpg" %>
+          <div><p class="p-1">Name: <%= pet_home.name  %></p></div>
+          <div><p class="p-2">Location: <%= pet_home.location %></p></div>
         </div>
       <% end %>
     <% end %>
